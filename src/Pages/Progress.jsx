@@ -53,7 +53,7 @@ const Progress = () => {
         <h1 className="text-4xl font-bold text-foreground mb-4">
           Your Progress
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           Track your calisthenics journey and celebrate your achievements.
         </p>
       </div>

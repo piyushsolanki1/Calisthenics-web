@@ -30,7 +30,7 @@ const About = () => {
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 font-['Poppins']">
             About{" "}
-            <span className="text-primary text-amber-500 ">Calisthenics</span>
+            <span className="text-primary  ">Calisthenics</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto">
             Empowering people worldwide to unlock their potential through
@@ -196,7 +196,7 @@ const About = () => {
       <p className="text-muted-foreground">Join thousands of people who have transformed their bodies and minds through calisthenics. Your journey to a stronger, healthier you starts here.</p>
       <div className="flex justify-center gap-4 mt-12">
         <button
-          className="border bg-amber-500 p-2 rounded-md pl-3 pr-3 hover:bg-amber-400 shadow-sm hover:shadow-md transition duration-300"
+          className="border bg-amber-500 p-2 rounded-md pl-3 pr-3 hover:bg-amber-600 shadow-sm hover:shadow-md transition duration-300"
           onClick={() => navigate("/workouts")}
         >
           Start Training Today
