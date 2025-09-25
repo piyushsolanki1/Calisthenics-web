@@ -1,39 +1,71 @@
-import { useState } from 'react'
-import {BrowserRouter as Router,  Route,Routes, useLocation } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation
+} from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
+import Home from './Pages/Home';
+import Progress from './Pages/Progress';
+import Nutrition from './Pages/Nutrition';
+import About from './Pages/About';
+import WorkoutDetail from './Pages/WorkoutDetail';
+import Workouts from './Pages/Workouts';
+import Contact from './Pages/Contact';
+import Challenges from './Pages/Challenges';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
+import PageWrapper from './Pages/PageWrapper';
 
-import Home from './Pages/Home'
-import Progress from './Pages/Progress'
-import Nutrition from './Pages/Nutrition'
-import About from './Pages/About'
-import WorkoutDetail from './Pages/WorkoutDetail'
-import Workouts from './Pages/Workouts'
-import Contact from './Pages/Contact'
-import Challenges from './Pages/Challenges'
-import Navbar from './Components/Navbar'
-import Footer from './Components/Footer'
+// Scroll to top whenever route changes
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
 
-function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+// Separate component for routes
+function AppRoutes() {
+  const location = useLocation();
 
   return (
-    <Router>
+    <>
+      <ScrollToTop />
       <Navbar />
-<main className='min-h-screen flex flex-col bg-background text-foreground' >
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/progress' element={<Progress />} />
-          <Route path='/nutrition' element={<Nutrition />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/workout/:id' element={<WorkoutDetail />} />
-          <Route path='/workouts' element={<Workouts />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/challenges' element={<Challenges />} />
-        </Routes>
-        </main>
-        <Footer />
-    </Router>
-  )
+
+      <main className="min-h-screen flex flex-col bg-background text-foreground">
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+            <Route path="/progress" element={<PageWrapper><Progress /></PageWrapper>} />
+            <Route path="/nutrition" element={<PageWrapper><Nutrition /></PageWrapper>} />
+            <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+            <Route path="/workout/:id" element={<PageWrapper><WorkoutDetail /></PageWrapper>} />
+            <Route path="/workouts" element={<PageWrapper><Workouts /></PageWrapper>} />
+            <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+            <Route path="/challenges" element={<PageWrapper><Challenges /></PageWrapper>} />
+          </Routes>
+        </AnimatePresence>
+      </main>
+
+      <Footer />
+    </>
+  );
 }
 
-export default App
+// Main App wrapper
+function App() {
+  return (
+    <Router>
+      <AppRoutes />
+    </Router>
+  );
+}
+
+export default App;

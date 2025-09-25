@@ -76,7 +76,7 @@ const WorkoutsPage = () => {
         {filteredWorkouts.map((workout) => (
           <div
             key={workout.id}
-            className="overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02] rounded-2xl shadow-sm"
+            className="bg-backgroung dark:bg-gray-800 overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-[1.02] rounded-2xl shadow-sm"
 
           >
             <img

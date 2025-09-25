@@ -23,7 +23,7 @@ const Challenges = () => {
         {filteredChallenges.map((challenge) => (
           <div
             key={challenge.id}
-            className="bg-background dark:bg-background shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition duration-300"
+            className="bg-background dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition duration-300"
           >
             <img
               src={challenge.image}
@@ -62,21 +62,21 @@ const Challenges = () => {
         ))}
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12'>
-        <div className=' bg-background flex justify-start rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300'>
+        <div className=' bg-background dark:bg-gray-800 flex justify-start rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300'>
           <span className='text-amber-500 p-4 justify-start'><Trophy size={35}/></span>
          <div>
          <h3>2,707</h3>
           <p className='text-gray-500'>Total Participants</p>
          </div>
         </div>
-        <div className=' bg-background flex justify-start rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300'>
+        <div className=' bg-background dark:bg-gray-800 flex justify-start rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300'>
           <span className='text-amber-500 p-4 justify-start'><CheckCircle size={35}/></span>
          <div>
          <h3>75%</h3>
           <p className='text-gray-500'>Average Completion</p>
          </div>
         </div>
-        <div className=' bg-background flex justify-start rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300'>
+        <div className=' bg-background dark:bg-gray-800 flex justify-start rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-all duration-300'>
           <span className='text-amber-500 p-4 justify-start'><Calendar size={35}/></span>
          <div>
          <h3>19</h3>
