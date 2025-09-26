@@ -11,9 +11,6 @@ import {
   Flame,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-// Find maximum for scaling
-const maxExerciseCount = Math.max(...exerciseTypes.map((e) => e.count));
-
 
 const Progress = () => {
   const navigate = useNavigate();
@@ -75,7 +72,7 @@ const Progress = () => {
 
       {/* Progress Sections */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-        
+
         {/* Weekly Progress */}
         <div className="bg-background dark:bg-gray-800 shadow-xl  hover:shadow-2xl duration-300 rounded-xl p-6">
           <div className="flex items-center gap-2 mb-4">
