@@ -63,7 +63,7 @@ const Navbar = () => {
         {/* Dark Mode Toggle */}
         <button
           onClick={toggleDarkMode}
-          className="ml-4 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition place-content-end-safe"
+          className="ml-18 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition place-content-end-safe"
           aria-label="Toggle Dark Mode"
         >
           {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -72,7 +72,7 @@ const Navbar = () => {
         {/*for mobile */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="ml-2 md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          className="ml-2 md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition "
           aria-label="Toggle Menu"
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -81,15 +81,15 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 shadow-md">
+        <div className="md:hidden bg-white dark:bg-gray-800 text-end max-w-x2l">
           <ul className="flex flex-col space-y-3 p-4 text-gray-700 dark:text-gray-200">
             {navLinks.map((link) => (
-              <li key={link.name}>
+              <li key={link.name} className=" p-1 rounded">
                 <NavLink
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `block hover:text-orange-500 transition ${
+                    `block hover:bg-orange-500 transition ${
                       isActive ? "text-orange-600 font-semibold" : ""
                     }`
                   }

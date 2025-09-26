@@ -25,7 +25,7 @@ function Nutrition({ onPageChange }) {
               key={key}
               onClick={() => setSelectedPlan(key)}
               className={`p-4 shadow-md border-2 rounded-lg cursor-pointer hover:shadow-xl duration-200 transition bg-background dark:bg-gray-800 ${
-                selectedPlan === key ? "border-amber-500" : "border-white"
+                selectedPlan === key ? "border-amber-500" : "border-gray-800"
               }`}
             >
               <div className="flex justify-between mb-2">
@@ -92,9 +92,9 @@ function Nutrition({ onPageChange }) {
         {/* Nutrition Tips */}
        <div className="bg-background dark:bg-gray-800 shadow-md p-8 rounded-xl">
        <h2 className="text-2xl font-semibold mb-4">Nutrition Tips</h2>
-        <div className="grid md:grid-cols-2 gap-6 text-foreground">
+        <div className="grid md:grid-cols-2 gap-6 text-foreground ">
           {nutritionTips.map((tip, index) => (
-            <div key={index} className="p-4 rounded-lg bg-background dark:bg-gray-700 shadow-md">
+            <div key={index} className="p-4 rounded-lg bg-background dark:bg-gray-700 shadow-sm hover:shadow-md transition-all duration-300">
               <h3 className="font-semibold mb-1 text-foreground">{tip.title}</h3>
               <p className="text-muted-foreground text-sm">{tip.tip}</p>
             </div>

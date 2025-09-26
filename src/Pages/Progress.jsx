@@ -11,6 +11,37 @@ import {
   Flame,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+const weeklyProgress = [
+  { week: "Week 1", workouts: 3 },
+  { week: "Week 2", workouts: 5 },
+  { week: "Week 3", workouts: 4 },
+  { week: "Week 4", workouts: 6 },
+  { week: "Week 5", workouts: 2 },
+  { week: "Week 6", workouts: 5 },
+  { week: "Week 7", workouts: 4 },
+  { week: "Week 8", workouts: 7 },
+];
+
+const monthlyProgress = [
+  { month: "January", workouts: 12 },
+  { month: "February", workouts: 15 },
+  { month: "March", workouts: 10 },
+  { month: "April", workouts: 18 },
+  { month: "May", workouts: 16 },
+  { month: "June", workouts: 13 },
+];
+
+const exerciseTypes = [
+  { type: "Push-ups", count: 120 },
+  { type: "Pull-ups", count: 150 },
+  { type: "Squats", count: 100 },
+  { type: "Lunges", count: 180 },
+  { type: "Planks", count: 160 },
+  { type: "Dips", count: 130 },
+];
+
+// Find maximum for scaling
+const maxExerciseCount = Math.max(...exerciseTypes.map((e) => e.count));
 
 const Progress = () => {
   const navigate = useNavigate();
@@ -72,7 +103,6 @@ const Progress = () => {
 
       {/* Progress Sections */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-
         {/* Weekly Progress */}
         <div className="bg-background dark:bg-gray-800 shadow-xl  hover:shadow-2xl duration-300 rounded-xl p-6">
           <div className="flex items-center gap-2 mb-4">
