@@ -25,7 +25,7 @@ function Nutrition({ onPageChange }) {
               key={key}
               onClick={() => setSelectedPlan(key)}
               className={`p-4 shadow-md border-2 rounded-lg cursor-pointer hover:shadow-xl duration-200 transition bg-background dark:bg-gray-800 ${
-                selectedPlan === key ? "border-amber-500" : "border-gray-100"
+                selectedPlan === key ? "border-amber-500" : "border-gray-50"
               }`}
             >
               <div className="flex justify-between mb-2">
